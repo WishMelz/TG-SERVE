@@ -68,6 +68,6 @@ pm2 start index.js
 GET: http://127.0.0.1:51783/send/SK7a7780ba6836b5ce76c0dc8b62f940efs?text=测试消息&type=HTML 
 
 POST: http://127.0.0.1:51783/send/SK7a7780ba6836b5ce76c0dc8b62f940efs
-		
+另外的字段放在 body 中
 ```
 
