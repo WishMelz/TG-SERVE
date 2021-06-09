@@ -106,6 +106,46 @@ router.get('/send/:key', (req, res) => {
         }
     })
 })
-
+router.post('/send/:key', (req, res) => {
+    let key = req.params.key || '';
+    let text = req.body.text || '';
+    let type = req.body.type || 'text';
+    conn.query('select * from data where `key` = ?', [key], (err, data) => {
+        if (err) {
+            console.log(err);
+            res.json({
+                code: "4000",
+                message: "系统异常"
+            })
+            return;
+        }
+        if (data.length == 0) {
+            res.json({
+                code: "4004",
+                message: "用户不存在"
+            })
+        } else {
+            let userId = data[0].userId;
+            switch (type) {
+                case 'text':
+                    BOT.sendMessage(userId, text);
+                    break;
+                case 'HTML':
+                    BOT.sendMessage(userId, text, { parse_mode: "HTML" });
+                    break;
+                case 'Markdown':
+                    BOT.sendMessage(userId, text, { parse_mode: "Markdown" });
+                    break;
+                default:
+                    BOT.sendMessage(userId, text);
+                    break;
+            }
+            res.json({
+                code: "2000",
+                message: "发送成功"
+            })
+        }
+    })
+})
 
 module.exports = router;

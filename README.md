@@ -41,3 +41,33 @@ or
 pm2 start index.js
 ```
 
+###  命令详情
+
+* `/help` 帮助
+* `/bind` 绑定
+* `/untie` 解除绑定
+* `/select` 查看SCKEY
+
+### 发送消息
+
+```
+/send/:SCKEY
+```
+
+* 字段说明
+
+| 字段  | 说明                                            |
+| ----- | ----------------------------------------------- |
+| SCKEY | `/bind` 绑定后机器人返回的KEY                   |
+| text  | 要发送的内容                                    |
+| type  | 可选类型 : `text`,`HTML`,`Markdown`。默认`text` |
+
+```
+举例:
+
+GET: http://127.0.0.1:51783/send/SK7a7780ba6836b5ce76c0dc8b62f940efs?text=测试消息&type=HTML 
+
+POST: http://127.0.0.1:51783/send/SK7a7780ba6836b5ce76c0dc8b62f940efs
+		
+```
+
