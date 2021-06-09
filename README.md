@@ -17,15 +17,7 @@ cd TG-SERVE
 npm i
 ```
 
-* 启动
-
-```
-node index.js
-or
-pm2 start index.js
-```
-
-* 修改配置文件 `config.js`
+* 修改配置文件将`config-stencil.js`更名为  `config.js`
 
 ```
   port: "51783",   // 端口
@@ -39,5 +31,13 @@ pm2 start index.js
     },
     TG_ROBOT_TOKEN: "",   // TG机器人的TOKEN
     md5_key:""						// 加密字符串(随便,越乱越长越好)
+```
+
+* 启动运行
+
+```
+node index.js
+or
+pm2 start index.js
 ```
 
