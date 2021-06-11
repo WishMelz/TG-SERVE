@@ -1,16 +1,6 @@
 /*
  Navicat Premium Data Transfer
-
- Source Server         : TGsercer
  Source Server Type    : MySQL
- Source Server Version : 50718
- Source Host           : gz-cynosdbmysql-grp-7xmn52d3.sql.tencentcdb.com:29817
- Source Schema         : tgserver
-
- Target Server Type    : MySQL
- Target Server Version : 50718
- File Encoding         : 65001
-
  Date: 11/06/2021 14:29:19
 */
 
